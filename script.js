@@ -14,7 +14,8 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
     })
     .then(() => {
         alert("Details submitted successfully!");
-
+        fbq('track', 'Lead');
+        
         window.location.href =
             "https://wa.me/919619780690?text=" +
             encodeURIComponent(

@@ -16,6 +16,7 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
         alert("Details submitted successfully!");
         fbq('track', 'Lead');
         
+        setTimeout(() => {
         window.location.href =
             "https://wa.me/919619780690?text=" +
             encodeURIComponent(
@@ -28,7 +29,7 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
             );
 
         document.getElementById("leadForm").reset();
-    })
+        }, 1000);
     .catch(function(err) {
         console.error(err);
         alert("Connection failed.");

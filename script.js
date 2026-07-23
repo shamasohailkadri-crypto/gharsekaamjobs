@@ -14,22 +14,25 @@ document.getElementById("leadForm").addEventListener("submit", function(e) {
     })
     .then(() => {
         alert("Details submitted successfully!");
-        fbq('track', 'Lead');
-        
-        setTimeout(() => {
-        window.location.href =
-            "https://wa.me/919619780690?text=" +
-            encodeURIComponent(
-                "Hi, my name is " +
-                document.getElementById("name").value +
-                ". Phone: " +
-                document.getElementById("phone").value +
-                ". City: " +
-                document.getElementById("city").value
-            );
 
-        document.getElementById("leadForm").reset();
+        fbq('track', 'Lead');
+
+        setTimeout(() => {
+            window.location.href =
+                "https://wa.me/919619780690?text=" +
+                encodeURIComponent(
+                    "Hi, my name is " +
+                    document.getElementById("name").value +
+                    ". Phone: " +
+                    document.getElementById("phone").value +
+                    ". City: " +
+                    document.getElementById("city").value
+                );
+
+            document.getElementById("leadForm").reset();
         }, 1000);
+
+    })
     .catch(function(err) {
         console.error(err);
         alert("Connection failed.");

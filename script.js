@@ -31,13 +31,13 @@ document.getElementById("leadForm").addEventListener("submit", function (e) {
         fbq('track', 'Lead', {}, {
             eventID: 'lead-' + Date.now(),
             event_callback: function () {
-                window.location.href = whatsappUrl;
+                window.open(whatsappUrl, "_blank");
             }
         });
 
         // Fallback if callback doesn't fire
         setTimeout(function () {
-            window.location.href = whatsappUrl;
+            window.open(whatsappUrl, "_blank");
         }, 1500);
 
         document.getElementById("leadForm").reset();

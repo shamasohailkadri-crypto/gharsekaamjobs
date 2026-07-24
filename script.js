@@ -29,6 +29,7 @@ document.getElementById("leadForm").addEventListener("submit", function (e) {
             );
 
         fbq('track', 'Lead', {}, {
+            eventID: 'lead-' + Date.now(),
             event_callback: function () {
                 window.location.href = whatsappUrl;
             }

@@ -1,5 +1,3 @@
-Absolutely. Copy and paste this entire script.js to replace your current one.
-
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby9E-x84bCaKOAwe8BFGeABlF6JlXmh340k4iciSbd4NqbMNy4Z_daQrp9LfvQvM3Is/exec";
 
 document.getElementById("leadForm").addEventListener("submit", function(e) {

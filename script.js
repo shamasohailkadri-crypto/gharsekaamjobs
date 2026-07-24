@@ -32,12 +32,14 @@ document.getElementById("leadForm").addEventListener("submit", function (e) {
             eventID: 'lead-' + Date.now(),
             event_callback: function () {
                 window.open(whatsappUrl, "_blank");
+                window.location.href = "thankyou.html";
             }
         });
 
         // Fallback if callback doesn't fire
         setTimeout(function () {
             window.open(whatsappUrl, "_blank");
+            window.location.href = "thankyou.html";
         }, 1500);
 
         document.getElementById("leadForm").reset();

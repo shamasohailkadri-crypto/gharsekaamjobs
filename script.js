@@ -20,27 +20,11 @@ document.getElementById("leadForm").addEventListener("submit", function (e) {
 
         alert("Details submitted successfully!");
 
-        const whatsappUrl =
-            "https://wa.me/919619780690?text=" +
-            encodeURIComponent(
-                "Hi, my name is " + name +
-                ". Phone: " + phone +
-                ". City: " + city
-            );
+        // Fire Meta Pixel Lead event
+        fbq('track', 'Lead');
 
-        fbq('track', 'Lead', {}, {
-            eventID: 'lead-' + Date.now(),
-            event_callback: function () {
-                window.open(whatsappUrl, "_blank");
-                window.location.href = "thankyou.html";
-            }
-        });
-
-        // Fallback if callback doesn't fire
-        setTimeout(function () {
-            window.open(whatsappUrl, "_blank");
-            window.location.href = "thankyou.html";
-        }, 1500);
+        // Go to Thank You page
+        window.location.href = "thankyou.html";
 
         document.getElementById("leadForm").reset();
 

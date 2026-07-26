@@ -18,13 +18,15 @@ document.getElementById("leadForm").addEventListener("submit", function (e) {
     })
     .then(() => {
 
-        alert("Details submitted successfully!");
+   alert("Details submitted successfully!");
 
-        // Fire Meta Pixel Lead event
-        fbq('track', 'Lead');
+// Fire Meta Pixel Lead event
+fbq('track', 'Lead');
 
-        // Go to Thank You page
-        window.location.href = "thankyou.html";
+// Wait 3 seconds before redirecting
+setTimeout(function () {
+    window.location.href = "thankyou.html";
+}, 3000);
 
         document.getElementById("leadForm").reset();
 
